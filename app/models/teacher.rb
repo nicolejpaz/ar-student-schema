@@ -11,7 +11,7 @@ class Teacher < ActiveRecord::Base
   # def age
   #   (DateTime.now - birthday).to_i / 365
   # end
-  has_many :students
+  has_and_belongs_to_many :students
 
 
 end
