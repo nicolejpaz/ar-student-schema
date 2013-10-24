@@ -13,11 +13,14 @@ class CreateStudents < ActiveRecord::Migration
       student.string                  :phone
       student.timestamps
     end
-    create_table :teachers do |teacher|
-      teacher.string                  :name
-      teacher.string                  :email
-      teacher.string                  :phone
-      teacher.timestamps
-    end
   end
+
+  # def up
+  #   add_column :students, :name, :string
+  #   Student.all.each do |student|
+  #     student.update_attribute! :name => student.first_name + " " + student.last_name
+  #   end
+  #   remove_column :students, :first_name
+  #   remove_column :students, :last_name
+  # end
 end
