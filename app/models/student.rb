@@ -7,7 +7,7 @@ class Student < ActiveRecord::Base
   validates :phone, :format => { :with => /\d{3}\W*\d{3}-{1}\d{4}/ }
   
   def name
-    "#{first_name} #{last_name}"
+    # "#{first_name} #{last_name}"
   end
 
   def age

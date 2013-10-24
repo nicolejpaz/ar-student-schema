@@ -6,6 +6,11 @@ module StudentsImporter
     Student.transaction do
       File.open(filename).each do |line|
         data = line.chomp.split(',')
+        data_first = data.shift
+        data[0] = "#{data_first} #{data[0]}"
+        if data[0] == 'first_name last_name'
+          data[0] = 'name'
+        end
         if field_names.nil?
           field_names = data
         else
